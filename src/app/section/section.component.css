@@ -1,0 +1,18 @@
+
+.content-container{
+    padding: 20%;
+    height: 60em;
+    width: 50em;
+    background-color:white;
+    margin-left: 20%;
+    margin-top: 2%;
+  
+}
+.green-button{
+    background-color: #115f64;
+    border: 1px solid #115f64;
+    margin-top: 0.2%;
+    margin-left: 16%;
+    border-radius: 1em;
+    color: white;
+}
