@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderTopComponent } from './header/header-top/header-top.component';
 import { HeaderBottomComponent } from './header/header-bottom/header-bottom.component';
 import { SectionComponent } from './section/section.component';
+import { FooterComponent } from './footer/footer.component';
+import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { SectionComponent } from './section/section.component';
     HeaderComponent,
     HeaderTopComponent,
     HeaderBottomComponent,
-    SectionComponent
+    SectionComponent,
+    FooterComponent,
+    SideNavigationComponent
   ],
   imports: [
     BrowserModule

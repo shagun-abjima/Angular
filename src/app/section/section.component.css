@@ -1,18 +1,20 @@
 
 .content-container{
     padding: 20%;
-    height: 60em;
+    height: auto;
     width: 50em;
     background-color:white;
     margin-left: 20%;
     margin-top: 2%;
-  
+    border: 1px solid rgba(150, 150, 150, 0.468);
+    margin-bottom: 2%;
+    box-shadow: 5px 10px 8px 10px #888888;
 }
 .green-button{
     background-color: #115f64;
     border: 1px solid #115f64;
     margin-top: 0.2%;
-    margin-left: 16%;
+    margin-left: 18%;
     border-radius: 1em;
     color: white;
 }
