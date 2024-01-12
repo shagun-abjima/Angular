@@ -1,0 +1,72 @@
+<input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText">
+<table class="table caption-top table-hover table-striped">
+    <caption>List of users</caption>
+    <thead class="table-head">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Department</th>
+        <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | search:searchText; let i=index">
+        <th scope="row">{{employee.EmployeeId}}</th>
+        <td>
+            <ng-container *ngIf ="editMode && editEmployeeId === employee.EmployeeId" >
+                <input type="text" [(ngModel)]="employee.FirstName">
+              </ng-container>
+              <ng-container *ngIf ="!editMode || (editMode && editEmployeeId !== employee.EmployeeId)" >
+                {{employee.FirstName}}
+              </ng-container>
+            </td>
+        <td>
+            <ng-container *ngIf ="editMode && editEmployeeId === employee.EmployeeId" >
+                <input type="text" [(ngModel)]="employee.LastName">
+              </ng-container>
+              <ng-container *ngIf ="!editMode || (editMode && editEmployeeId !== employee.EmployeeId)" >
+                {{employee.LastName}}
+              </ng-container>
+            </td>
+        <td>
+            <ng-container *ngIf ="editMode && editEmployeeId === employee.EmployeeId" >
+                <input type="text" [(ngModel)]="employee.Department">
+              </ng-container>
+              <ng-container *ngIf ="!editMode || (editMode && editEmployeeId !== employee.EmployeeId)" >
+                {{employee.Department}}
+              </ng-container>
+            </td>
+        <td><div>
+            <button type="button" class="btn btn-danger" (click)="deleteRow(employee.EmployeeId)"><i class="fa-solid fa-trash"></i>Delete</button>
+            <button type="button" class="btn btn-warning" (click)="EditMode(employee.EmployeeId)"><i class="fa-solid fa-upload"></i>Update</button>
+        </div></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Add NEW Employee</h2>
+  <hr>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+       
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Department</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       
+        <td><input type="text" [(ngModel)]="FirstName"></td>
+        <td><input type="text" [(ngModel)]="LastName"></td>
+        <td><input type="text" [(ngModel)]="Department"></td>
+        <td><button class="btn btn-success" (click)="addEmployee()" > Add <i class="fa-solid fa-plus"></i> </button></td>
+       
+       
+      </tr>
+   
+     
+    </tbody>
+  </table>
