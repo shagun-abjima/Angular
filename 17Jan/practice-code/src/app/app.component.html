@@ -1,0 +1,8 @@
+<h1>Parent component</h1>
+<!--input property-->
+<h1>Input property</h1>
+<label for="name">Name from parent component to child</label>
+<input type="text" #name (keyup)="0"/>
+<h1>Output property</h1>
+<p>{{childData}}</p>
+<app-component-for-usingvp [parentData]="name.value" (evnt)="getData($event)"></app-component-for-usingvp>
