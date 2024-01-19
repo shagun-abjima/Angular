@@ -10,8 +10,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   title = 'practice-code';
   childData:any;
+ 
+
   getData(val:string){
     this.childData.val;
 
   }
+
 }
