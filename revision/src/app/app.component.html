@@ -1,0 +1,33 @@
+<h1>hi</h1>
+<!--Data Binding :- We are getting this title from ts file It is called String interpolation -->
+<h2>{{title}}</h2>
+<!--Property Binding we can also use bind-hidden instead of square brackets -->
+<div [hidden]="!display">hi</div>
+<!--Two way data binding through ngModel-->
+<div>
+  <input type="text" [(ngModel)]="searchText">
+  <button>Search</button>
+</div>
+<div><p>Search Result for : {{searchText}}</p></div>
+<!--Directives-->
+<div *ngFor="let item of [1,2,3,4,5,6]">
+  <p>Current element of array is {{item}}</p>
+</div>
+<!--PRACTICE-->
+<h1>Assignment 1</h1>
+<label for="userName">UserName</label>
+<input type="text" class="form-control input-box" [(ngModel)]="username">
+<p>{{username}}</p>
+<button
+ [disabled]="username ===''"
+ (click)="username=''"
+ >Reset User</button>
+ <h1>Assignment 2</h1>
+ <button
+ (click)="onToggleDetails()"
+ >Display Details</button>
+ <p *ngIf="showSecret">Secret Password = tuna</p>
+ <div ngFor="let logItem of log"
+ [ngStyle]="{backgroundColor: logItem>=5?'blue' : 'transparent'}"
+ [ngClass]="{'white-text':logItem>=5}"
+ >{{logItem}}</div>
