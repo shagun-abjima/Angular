@@ -1,0 +1,7 @@
+<app-child [name]="currentName" [obj]="user" (dataEvent)="addUser($event)"></app-child>
+<!--Child to parent-->
+<ul *ngFor="let user of users">
+  <li>{{user}}</li>
+</ul>
+<input type="text" #user/>
+<button (click)="addUser(user.value); user.value=''">Add User</button>
